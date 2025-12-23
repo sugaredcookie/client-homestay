@@ -1,0 +1,388 @@
+/* Rooms Page Styles */
+.rooms-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.room-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.room-header h3 {
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  margin: 0;
+}
+
+.dark-mode .room-header h3 {
+  color: var(--accent-green);
+}
+
+.room-price-tag {
+  background: var(--primary-green);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark-mode .room-price-tag {
+  background: var(--accent-green);
+}
+
+.price-icon {
+  font-size: 0.9rem;
+}
+
+.room-details {
+  margin-bottom: 2rem;
+}
+
+.room-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .room-detail {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.detail-icon {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.dark-mode .detail-icon {
+  color: var(--accent-green);
+}
+
+.detail-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.highlight {
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.dark-mode .highlight {
+  color: var(--accent-green);
+}
+
+.room-features h4 {
+  margin-bottom: 1.25rem;
+  color: var(--primary-green);
+  font-size: 1.2rem;
+}
+
+.dark-mode .room-features h4 {
+  color: var(--accent-green);
+}
+
+.room-features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.room-features li {
+  margin-bottom: 0.875rem;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.room-features li svg {
+  font-size: 1rem;
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.dark-mode .room-features li svg {
+  color: var(--accent-green);
+}
+
+.pricing-section {
+  margin: 4rem 0;
+}
+
+.pricing-table {
+  overflow-x: auto;
+  padding: 2rem;
+}
+
+.pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table th {
+  background: var(--primary-green);
+  color: white;
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.dark-mode .pricing-table th {
+  background: var(--accent-green);
+}
+
+.pricing-table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.pricing-table tr:hover {
+  background: rgba(45, 106, 79, 0.05);
+}
+
+.dark-mode .pricing-table tr:hover {
+  background: rgba(45, 106, 79, 0.1);
+}
+
+.price-cell {
+  font-weight: 700;
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark-mode .price-cell {
+  color: var(--accent-green);
+}
+
+.price-table-icon {
+  font-size: 0.9rem;
+}
+
+.pricing-note {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(45, 106, 79, 0.1);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.dark-mode .pricing-note {
+  background: rgba(45, 106, 79, 0.05);
+}
+
+.pricing-note p {
+  margin-bottom: 0.5rem;
+}
+
+.booking-cta {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(45, 106, 79, 0.1);
+  border-radius: var(--border-radius);
+  margin-top: 3rem;
+}
+
+.dark-mode .booking-cta {
+  background: rgba(45, 106, 79, 0.05);
+}
+
+.booking-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+}
+
+.dark-mode .booking-cta h3 {
+  color: var(--accent-green);
+}
+
+.booking-cta p {
+  margin-bottom: 2rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-primary {
+  background: var(--primary-green);
+  color: white;
+}
+
+.dark-mode .btn-primary {
+  background: var(--accent-green);
+}
+
+.btn-primary:hover {
+  background: var(--secondary-green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .room-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .room-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .pricing-table {
+    padding: 1.5rem;
+  }
+  
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+  }
+  
+  .booking-cta {
+    padding: 2rem 1.5rem;
+  }
+  
+  .booking-cta h3 {
+    font-size: 1.6rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rooms-intro {
+    font-size: 1rem;
+  }
+  
+  .room-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .room-price-tag {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .room-detail {
+    gap: 0.75rem;
+  }
+  
+  .detail-label {
+    font-size: 0.85rem;
+  }
+  
+  .detail-value {
+    font-size: 0.95rem;
+  }
+  
+  .room-features li {
+    font-size: 0.95rem;
+  }
+  
+  .pricing-note {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}

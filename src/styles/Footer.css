@@ -1,0 +1,258 @@
+/* Footer Styles */
+.footer {
+  background: var(--dark-green);
+  color: white;
+  padding: 4rem 0 2rem;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-green);
+}
+
+.footer-description {
+  line-height: 1.7;
+  opacity: 0.9;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.footer-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-green);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-green);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+  opacity: 0.9;
+}
+
+.footer-link:hover {
+  color: var(--light-green);
+  opacity: 1;
+  padding-left: 0.5rem;
+}
+
+.link-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  color: var(--light-green);
+  margin-top: 0.15rem;
+  min-width: 20px;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0.9;
+}
+
+.contact-link:hover {
+  color: var(--light-green);
+  opacity: 1;
+}
+
+.contact-text {
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+  font-size: 1.5rem;
+}
+
+.whatsapp-text {
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.6rem;
+  }
+  
+  .floating-whatsapp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .whatsapp-text {
+    display: none;
+  }
+  
+  .floating-whatsapp:hover .whatsapp-text {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .footer {
+    padding: 2.5rem 0 1.25rem;
+  }
+  
+  .footer-title {
+    font-size: 1.4rem;
+  }
+  
+  .footer-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .floating-whatsapp {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .whatsapp-icon {
+    font-size: 1.25rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
