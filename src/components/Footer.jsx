@@ -4,9 +4,9 @@ import {
   FaPhone,
   FaWhatsapp,
   FaEnvelope,
-  FaMapMarkerAlt,
+  FaLocationDot,
   FaArrowRight
-} from 'react-icons/fa';
+} from 'react-icons/fa6'; // Make sure it's fa6
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -70,7 +70,7 @@ const Footer = () => {
                 <span className="contact-text">Email: placeholder@email.com</span>
               </li>
               <li>
-                <FaMapMarkerAlt className="contact-icon" />
+                <FaLocationDot className="contact-icon" />
                 <span className="contact-text">Tinchulay</span>
               </li>
             </ul>

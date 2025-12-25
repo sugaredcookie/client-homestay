@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaWhatsapp, FaPhone, FaArrowDown } from 'react-icons/fa6';
 import '../styles/Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleRooms = () => {
+    navigate('/rooms');
+  };
+
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
@@ -10,28 +17,27 @@ const Hero = () => {
         <div className="container">
           <div className="hero-text">
             <h1 className="hero-title">
-              Welcome to <span className="highlight">Roshni Homestay</span>
+              Live the hills. <span className="highlight">Feel at home.</span>
             </h1>
-            <p className="hero-subtitle">Tinchulay's Mountain Sanctuary</p>
+            <p className="hero-subtitle">A quiet home in the hills of Tinchulay</p>
             <p className="hero-description">
-              Experience the perfect blend of luxury and nature at our scenic mountain retreat. 
-              Wake up to breathtaking views, breathe fresh mountain air, and create memories 
-              that last a lifetime.
+              Stay with a local family, surrounded by mountains, clouds, and silence. 
+              Not a hotel. Just a warm home in nature.
             </p>
             <div className="hero-buttons">
-              <a 
-                href="#rooms" 
+              <button
+                onClick={handleRooms}
                 className="btn btn-primary btn-large"
               >
-                Explore Our Rooms
-              </a>
+                Our Rooms
+              </button>
               <a
                 href="https://wa.me/917001100952"
                 className="btn btn-whatsapp btn-large"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaWhatsapp className="btn-icon" /> Book Your Stay
+                <FaWhatsapp className="btn-icon" /> Talk to Us
               </a>
             </div>
           </div>
@@ -39,7 +45,7 @@ const Hero = () => {
       </div>
       
       <div className="hero-scroll-indicator">
-        <span>Scroll to explore</span>
+        <span>Experience peace</span>
         <div className="scroll-arrow"><FaArrowDown /></div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   FaBed,
   FaShower,
   FaSoap,
@@ -7,49 +7,60 @@ import {
   FaUtensils,
   FaFire,
   FaMountain,
-  FaParking,
-  FaTimesCircle,
+  FaSquareParking,
+  FaHouse,
+  FaHeart
+} from "react-icons/fa6";
+
+// These icons don't exist in fa6, use alternatives:
+import { 
   FaSnowflake,
   FaBolt,
+  FaTv,
+  FaWineGlass,
+  FaCircleXmark
+} from 'react-icons/fa6';
+
+// For icons that don't exist in fa6, we need to use fa5 or alternatives:
+import { 
   FaConciergeBell,
   FaSwimmingPool,
-  FaDumbbell,
-  FaTv,
-  FaWineBottle
-} from 'react-icons/fa';
+  FaDumbbell
+} from 'react-icons/fa'; // Keep these from fa5
+
 import './Amenities.css';
 
 const Amenities = () => {
   const amenities = [
-    { icon: <FaBed />, name: 'Comfortable Beds', category: 'Room' },
-    { icon: <FaShower />, name: 'Hot Water', category: 'Bathroom' },
-    { icon: <FaSoap />, name: 'Basic Toiletries', category: 'Bathroom' },
-    { icon: <FaWind />, name: 'Linen & Towels', category: 'Room' },
-    { icon: <FaUtensils />, name: 'Dining Area', category: 'Common' },
+    { icon: <FaBed />, name: 'Comfortable Beds', category: 'Sleep' },
+    { icon: <FaShower />, name: 'Hot Water', category: 'Bath' },
+    { icon: <FaSoap />, name: 'Basic Toiletries', category: 'Bath' },
+    { icon: <FaWind />, name: 'Clean Linen', category: 'Sleep' },
+    { icon: <FaUtensils />, name: 'Dining Space', category: 'Common' },
     { icon: <FaFire />, name: 'Bonfire Area', category: 'Common' },
-    { icon: <FaMountain />, name: 'Viewing Deck', category: 'Common' },
-    { icon: <FaParking />, name: 'Parking Space', category: 'Common' },
+    { icon: <FaMountain />, name: 'Viewing Spot', category: 'Common' },
+    { icon: <FaSquareParking />, name: 'Parking Space', category: 'Common' },
   ];
 
   const houseRules = [
-    'Government ID proof required at check-in',
-    'Pets are not allowed',
-    'Smoking is strictly prohibited indoors',
-    'Check-out time is 12 Noon',
-    'Open check-in time',
-    'Respect quiet hours after 10 PM',
-    'Damage to property will be charged',
+    'Government ID required (for safety)',
+    'Pets not allowed (we have local dogs)',
+    'No smoking indoors (fresh air is precious)',
+    'Check-out by 12 Noon (no rush, but helps us prepare)',
+    'Check-in anytime (like visiting family)',
+    'Quiet hours after 10 PM (for everyone\'s peace)',
+    'Please care for our home (as we care for you)',
     'Guests are responsible for their belongings'
   ];
 
   const notAvailable = [
-    { icon: <FaSnowflake />, text: 'Air Conditioning (AC)' },
-    { icon: <FaBolt />, text: 'Power Backup (Generator/Inverter)' },
-    { icon: <FaConciergeBell />, text: 'Room Service' },
-    { icon: <FaSwimmingPool />, text: 'Swimming Pool' },
-    { icon: <FaDumbbell />, text: 'Gym Facilities' },
-    { icon: <FaTv />, text: 'Television in rooms' },
-    { icon: <FaWineBottle />, text: 'Mini-bar' }
+    { icon: <FaSnowflake />, text: 'Air Conditioning (not needed in hills)' },
+    { icon: <FaBolt />, text: 'Power Backup (occasional power cuts in hills)' },
+    { icon: <FaConciergeBell />, text: 'Room Service (we\'re a family home)' },
+    { icon: <FaSwimmingPool />, text: 'Swimming Pool (nature is our pool)' },
+    { icon: <FaDumbbell />, text: 'Gym (hills are your gym)' },
+    { icon: <FaTv />, text: 'TV in rooms (we encourage nature viewing)' },
+    { icon: <FaWineGlass />, text: 'Mini-bar (local tea is better)' } // Changed from FaWineBottle
   ];
 
   return (
@@ -57,16 +68,28 @@ const Amenities = () => {
       <section className="amenities-hero section">
         <div className="container">
           <div className="section-header">
-            <h1 className="section-title">Amenities & Facilities</h1>
+            <h1 className="section-title">Our Simple Amenities</h1>
             <p className="section-description">
-              We provide all basic amenities for a comfortable stay while maintaining 
-              the authentic mountain experience.
+              Basic comforts for a peaceful stay. We focus on what matters most in the hills.
             </p>
+          </div>
+          
+          <div className="simple-note card">
+            <FaHouse className="simple-icon" />
+            <div className="simple-content">
+              <h3>About Our Approach</h3>
+              <p>
+                We provide <strong>basic, honest amenities</strong> that make your stay comfortable without luxury pretensions. 
+                In the hills, sometimes less is more — we believe in simple joys like mountain views, 
+                fresh air, and heartfelt hospitality.
+              </p>
+            </div>
           </div>
           
           <div className="amenities-section">
             <div className="section-header">
-              <h2 className="section-title">Available Amenities</h2>
+              <h2 className="section-title">What We Offer</h2>
+              <p className="section-description">Simple comforts for your peaceful stay</p>
             </div>
             <div className="amenities-grid">
               {amenities.map((amenity, index) => (
@@ -81,20 +104,21 @@ const Amenities = () => {
           
           <div className="amenities-details">
             <div className="rules-section card">
-              <h3>House Rules</h3>
+              <h3>House Guidelines</h3>
+              <p className="rules-intro">Simple rules to keep our home peaceful for everyone:</p>
               <ul>
                 {houseRules.map((rule, index) => (
                   <li key={index}>
-                    <FaTimesCircle className="rule-icon" /> {rule}
+                    <FaCircleXmark className="rule-icon" /> {rule}
                   </li>
                 ))}
               </ul>
             </div>
             
             <div className="not-available-section card">
-              <h3>Not Available</h3>
+              <h3>What We Don't Have</h3>
               <p className="notice">
-                <strong>Please Note:</strong> The following facilities are not available
+                <strong>Honest note:</strong> We choose to keep things simple
               </p>
               <ul>
                 {notAvailable.map((item, index) => (
@@ -104,9 +128,10 @@ const Amenities = () => {
                 ))}
               </ul>
               <div className="nature-note">
+                <FaHeart className="nature-icon" />
                 <p>
-                  We prioritize preserving the natural mountain environment and 
-                  providing an authentic homestay experience over modern luxuries.
+                  We preserve the natural mountain experience over modern luxuries. 
+                  Our amenities reflect what truly matters in the hills.
                 </p>
               </div>
             </div>
@@ -114,9 +139,8 @@ const Amenities = () => {
           
           <div className="amenities-note">
             <p>
-              <strong>Important:</strong> Due to our location in the mountains, 
-              power fluctuations may occur. We recommend carrying power banks for 
-              your electronic devices.
+              <strong>Simple truth:</strong> Power fluctuations sometimes happen in the hills. 
+              We recommend carrying power banks — it's part of the authentic mountain experience.
             </p>
           </div>
         </div>
