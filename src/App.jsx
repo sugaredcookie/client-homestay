@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,11 +10,26 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import './App.css';
 
+// ScrollToTop Component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top when route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // Use 'instant' for immediate scroll, or 'smooth' for smooth scroll
+    });
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       setDarkMode(true);
@@ -43,6 +58,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop /> {/* Add this here */}
       <div className="App">
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <main>

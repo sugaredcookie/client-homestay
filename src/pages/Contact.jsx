@@ -3,11 +3,12 @@ import {
   FaPhone,
   FaWhatsapp,
   FaEnvelope,
-  FaMapMarkerAlt,
-  FaCalendarAlt,
-  FaUserFriends,
-  FaPaperPlane
-} from 'react-icons/fa';
+  FaLocationDot,
+  FaCalendarDays,
+  FaUsers,
+  FaPaperPlane,
+  FaHeart
+} from 'react-icons/fa6';
 import './Contact.css';
 
 const Contact = () => {
@@ -31,7 +32,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = `
-New Booking Inquiry from Roshni Homestay Website:
+Hello from Roshni Homestay website!
       
 Name: ${formData.name}
 Email: ${formData.email}
@@ -52,14 +53,14 @@ Message: ${formData.message}
       title: 'Call Us',
       detail: '+91 7001100952',
       link: 'tel:+917001100952',
-      action: 'Call Now'
+      action: 'Call to Chat'
     },
     {
       icon: <FaWhatsapp />,
       title: 'WhatsApp',
       detail: '7001100952',
       link: 'https://wa.me/917001100952',
-      action: 'Message Now'
+      action: 'Message Us'
     },
     {
       icon: <FaEnvelope />,
@@ -69,11 +70,11 @@ Message: ${formData.message}
       action: 'Send Email'
     },
     {
-      icon: <FaMapMarkerAlt />,
-      title: 'Location',
+      icon: <FaLocationDot />, // Changed from FaMapMarkerAlt
+      title: 'Our Location',
       detail: 'Tinchulay',
       link: '#',
-      action: 'View on Map'
+      action: 'View Location'
     }
   ];
 
@@ -82,17 +83,17 @@ Message: ${formData.message}
       <section className="contact-hero section">
         <div className="container">
           <div className="section-header">
-            <h1 className="section-title">Contact & Book Now</h1>
+            <h1 className="section-title">Talk to Us</h1>
             <p className="section-description">
-              Get in touch with us to book your stay or ask any questions. 
-              We're here to help you plan your perfect mountain getaway.
+              Planning a peaceful break in the hills? We'd love to welcome you to our simple home.
             </p>
           </div>
           
           <div className="contact-content">
             <div className="contact-info-section">
               <div className="section-header">
-                <h2 className="section-title">Contact Information</h2>
+                <h2 className="section-title">Reach Out Anytime</h2>
+                <p className="section-description">We're here to help plan your peaceful stay</p>
               </div>
               <div className="contact-methods">
                 {contactMethods.map((method, index) => (
@@ -115,27 +116,32 @@ Message: ${formData.message}
               </div>
               
               <div className="quick-info card">
-                <h3>Quick Information</h3>
+                <div className="quick-info-header">
+                  <FaHeart className="quick-info-icon" />
+                  <h3>Simple & Friendly</h3>
+                </div>
                 <ul>
-                  <li><FaCalendarAlt className="info-icon" /> <strong>Check-in:</strong> Open check-in</li>
-                  <li><FaCalendarAlt className="info-icon" /> <strong>Check-out:</strong> 12 Noon</li>
-                  <li><FaPaperPlane className="info-icon" /> <strong>Payment:</strong> Cash or digital payments</li>
-                  <li><FaUserFriends className="info-icon" /> <strong>ID Proof:</strong> Government ID required</li>
+                  <li><FaCalendarDays className="info-icon" /> <strong>Check-in:</strong> Flexible, like visiting family</li>
+                  <li><FaCalendarDays className="info-icon" /> <strong>Check-out:</strong> 12 Noon, no rush</li>
+                  <li><FaPaperPlane className="info-icon" /> <strong>Payment:</strong> Cash or digital, whatever works</li>
+                  <li><FaUsers className="info-icon" /> <strong>ID Proof:</strong> Simple verification for safety</li>
                 </ul>
               </div>
             </div>
             
             <div className="booking-form-section">
               <div className="booking-form card">
-                <h2>Booking Inquiry Form</h2>
-                <p className="form-subtitle">
-                  Fill out this form and we'll contact you via WhatsApp to confirm your booking.
-                </p>
+                <div className="booking-form-header">
+                  <h2>Send Us a Message</h2>
+                  <p className="form-subtitle">
+                    Share your plans and we'll get back to you personally
+                  </p>
+                </div>
                 
                 <form onSubmit={handleSubmit}>
                   <div className="form-grid">
                     <div className="form-group">
-                      <label htmlFor="name">Full Name *</label>
+                      <label htmlFor="name">Your Name *</label>
                       <input
                         type="text"
                         id="name"
@@ -143,7 +149,7 @@ Message: ${formData.message}
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Your full name"
+                        placeholder="What should we call you?"
                       />
                     </div>
                     
@@ -173,7 +179,7 @@ Message: ${formData.message}
                     </div>
                     
                     <div className="form-group">
-                      <label htmlFor="checkIn">Check-in Date *</label>
+                      <label htmlFor="checkIn">When would you like to come? *</label>
                       <input
                         type="date"
                         id="checkIn"
@@ -185,7 +191,7 @@ Message: ${formData.message}
                     </div>
                     
                     <div className="form-group">
-                      <label htmlFor="checkOut">Check-out Date *</label>
+                      <label htmlFor="checkOut">When would you like to leave? *</label>
                       <input
                         type="date"
                         id="checkOut"
@@ -197,7 +203,7 @@ Message: ${formData.message}
                     </div>
                     
                     <div className="form-group">
-                      <label htmlFor="guests">Number of Guests *</label>
+                      <label htmlFor="guests">How many people? *</label>
                       <select
                         id="guests"
                         name="guests"
@@ -205,35 +211,34 @@ Message: ${formData.message}
                         onChange={handleChange}
                         required
                       >
-                        <option value="">Select guests</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5+ Guests</option>
+                        <option value="">Select number of guests</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5+ People</option>
                       </select>
                     </div>
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="message">Additional Message</label>
+                    <label htmlFor="message">Anything you'd like to share?</label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows="4"
-                      placeholder="Any special requests or questions..."
+                      placeholder="Special requests, questions, or just say hello..."
                     ></textarea>
                   </div>
                   
                   <button type="submit" className="btn btn-whatsapp submit-btn">
-                    <FaWhatsapp className="btn-icon" /> Submit via WhatsApp
+                    <FaWhatsapp className="btn-icon" /> Send via WhatsApp
                   </button>
                   
                   <p className="form-note">
-                    By submitting, you'll be redirected to WhatsApp to send your inquiry.
-                    We typically respond within 1-2 hours.
+                    We'll respond personally, usually within a few hours. Looking forward to connecting!
                   </p>
                 </form>
               </div>

@@ -1,26 +1,26 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { 
-  FaHome,
-  FaInfoCircle,
+  FaHouse,           // Changed from FaHome
+  FaCircleInfo,      // Changed from FaInfoCircle
   FaBed,
-  FaConciergeBell,
+  FaBellConcierge,   // Changed from FaConciergeBell
   FaImages,
-  FaPhoneAlt,
+  FaPhone,           // Changed from FaPhoneAlt
   FaSun,
   FaMoon,
   FaWhatsapp
-} from 'react-icons/fa';
+} from 'react-icons/fa6'; // Changed from 'fa' to 'fa6'
 import '../styles/Navbar.css';
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const navLinks = [
-    { path: '/', label: 'Home', icon: <FaHome /> },
-    { path: '/about', label: 'About', icon: <FaInfoCircle /> },
+    { path: '/', label: 'Home', icon: <FaHouse /> },
+    { path: '/about', label: 'About', icon: <FaCircleInfo /> },
     { path: '/rooms', label: 'Rooms', icon: <FaBed /> },
-    { path: '/amenities', label: 'Amenities', icon: <FaConciergeBell /> },
+    { path: '/amenities', label: 'Amenities', icon: <FaBellConcierge /> },
     { path: '/gallery', label: 'Gallery', icon: <FaImages /> },
-    { path: '/contact', label: 'Contact', icon: <FaPhoneAlt /> },
+    { path: '/contact', label: 'Contact', icon: <FaPhone /> },
   ];
 
   return (
